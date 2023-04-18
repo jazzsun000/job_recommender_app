@@ -28,7 +28,7 @@ job_desc_tfidf_user = job_desc_tfidf.transform([resume])
 
 
 # open the compressed bz2 file for reading
-with bz2.BZ2File('Data/new_df.bz2', 'r') as f:
+with bz2.BZ2File('Data/one_per_new_df.bz2', 'r') as f:
     # read the DataFrame from the compressed file
     new_df = pd.read_csv(f, compression='bz2')
 # # Load the new_df dataframe from the pickle file
