@@ -61,10 +61,10 @@ similarity_scores += location_weight.reshape(1, -1)
 
 # Sort the jobs by similarity score and return the top 5 recommendations
 top_recommendations = new_df[['Title', 'Location', 'Job Description']].copy()
-top_recommendations['similarity_score'] = similarity_scores.reshape(-1)
-top_recommendations = top_recommendations.sort_values('similarity_score', ascending=False).head(5)
+top_recommendations['Similarity Score'] = similarity_scores.reshape(-1)
+top_recommendations = top_recommendations.sort_values('Similarity Score', ascending=False).head(5)
 
 # Display top 5 job recommendations
 st.write("Top 5 job recommendations:")
-st.write(top_recommendations[['Title', 'Location','Job Description']])
+st.write(top_recommendations[['Title', 'Location','Job Description','Similarity Score']])
 
